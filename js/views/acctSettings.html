@@ -1,0 +1,121 @@
+<div>
+	<script id="acctSettings" type="text/x-handlebars-template">
+
+
+	<!-- Modal overlay  -->
+	<div id="deleteAcctModal" class="modal-container">
+		<div class="modal">
+			<img class="modalCloseIcon" src="images/close.png" alt="close window icon"/>
+
+			<h2 class="">Some things are forever...</h2>
+			<p>Are you sure you'd like to delete your account?</p>
+
+			<button id="deleteAccountButton">Delete My Account</button>
+
+		</div><!-- /.modal -->
+	</div><!-- /.modal-container -->
+
+
+
+	<div class="info-wrapper">
+
+			<div class="info-col1">
+
+				<p class="">Basic info <span class="small" id="infoId"></span></p>
+
+					<form>
+						<label for="infoTitle">Title</label>
+						<select id="infoTitleGender">
+
+						</select>
+
+						<label for="infoName">Full Name</label>
+						<input id="infoName" type="text" class="" value="" placeholder="Full Name"/>
+
+						<label for="infoEmail">Email</label>
+						<input id="infoEmail" type="text" class="" value="" placeholder="Email"/>
+
+						<label for="infoBirthdate">Birthdate</label>
+						<input id="infoBirthdate" type="text" class="" placeholder="month/day/year"/>
+
+						<input id="updateInfo" type="submit" value="Save"/>
+					</form>
+
+				<p class="second-form">Change your password</p>
+
+					<form>
+
+						<label for="infoCurrentPass">Current Password</label>
+						<input id="infoCurrentPass" type="password" class="" placeholder="Current Password"/>
+
+						<label for="infoPass">New Password</label>
+						<input id="infoPass" type="password" class="" placeholder="Password"/>
+
+						<label for="infoPassAgain">New Password Again</label>
+						<input id="infoPassAgain" type="password" class="" placeholder="Password again"/>
+
+						<input id="resetPasswordInfo" type="submit" value="Change Password"/>
+					</form>
+
+			</div><!-- /.info-col1 -->
+
+
+
+			<div class="info-col2">
+
+				<p class="">Your Devices</p>
+
+					<form>
+						<label for="infoDeviceName">This device</label>
+						<input class="infoDeviceName" type="text" data-id="" value="" placeholder="Name this device"/>
+
+						<input id="submitDeviceName" type="submit" value="Save"/>
+					</form>
+
+					<label for="infoDeviceList">Your other devices</label>
+					<ul id="infoDeviceList">
+						<!-- dynamically inserted li-->
+					</ul>
+
+			</div><!-- /.info-col2 -->
+
+			<div class="info-col3">
+
+				<p class="">Upgrade to ad free <span class="small">$5/month</span></p>
+
+					<form>
+						<label for="infoCardName">Name on Card</label>
+						<input id="infoCardName" type="text" class="" value="" placeholder="Name on Card"/>
+
+						<label for="infoCardNum">Card #</label>
+						<input id="infoCardNum" type="text" class="" value="" placeholder="Card #"/>
+
+						<label for="infoExpir">Expiration</label>
+						<input id="infoExpir" type="text" class="" value="" placeholder="Expiration"/>
+
+						<label for="infoCSC">CSC</label>
+						<input id="infoCSC" type="text" class="" value="" placeholder="CSC"/>
+
+						<input id="upgradeInfo" type="submit" value="Upgrade"/>
+					</form>
+
+
+				<p class="second-form">Account Options</p>
+
+					<input id="themeDark" type="checkbox"/>
+					<label for="themeDark">Use dark theme</label></br>
+
+					<input id="emailUpdatesInfo" type="checkbox" value="receiveEmails" checked/>
+					<label for="emailUpdatesInfo">Receive email updates</label>
+
+					<button id="logoutLink">Log out of YooTunes</button>
+					<button id="deleteAccount" >Delete Account</button>
+
+
+
+			</div><!-- /.info-col3 -->
+	</div><!-- /.info-wrapper -->
+
+
+	</script>
+</div>

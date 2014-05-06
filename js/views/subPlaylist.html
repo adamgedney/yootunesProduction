@@ -1,0 +1,18 @@
+<div>
+	<script id="subPlaylist" type="text/x-handlebars-template">
+
+
+{{#each playlist}}
+
+		<li data-songId="{{song_id}}" data-playlistId="{{id}}" data-user="{{user_id}}" class="li-hover playlist-menu-sub-list">{{name}}
+		<img class="addedToPlaylistCheck" src="images/icons/check.png" alt="song added to playlist indicator"/>
+		</li>
+
+{{/each}}
+
+
+
+
+
+	</script>
+</div>

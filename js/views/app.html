@@ -1,0 +1,270 @@
+<div>
+	<script id="app" type="text/x-handlebars-template">
+
+
+
+	<!-- Modal overlay  -->
+	<div id="nameDeviceModal" class="modal-container">
+		<div class="modal">
+			<img class="modalCloseIcon" src="images/close.png" alt="close window icon"/>
+
+			<h2 class="">Name this device</h2>
+			<p>So you can control it from another device of yours</p>
+
+			<form>
+				<div id="devicePrompt">
+					<p>Maybe your cookies were deleted? <br />
+						Is one of these this device?</p>
+
+					<select id="userDevices">
+					</select>
+				</div><!-- /#devicePrompt -->
+
+				<p>No. This is a new device.</p>
+
+				<input class="infoDeviceName" type="text" data-id="" value="" placeholder="Name this device"/>
+
+				<input id="submitDeviceName" type="submit" value="Save"/>
+			</form>
+
+		</div><!-- /.modal -->
+	</div><!-- /.modal-container -->
+
+
+
+
+
+	<div id="app">
+
+		<aside class="app">
+
+			<div class="library-nav">
+
+				<ul>
+					<li id="returnToSearch" >Return to search results  <img title="Return to search" src="images/icons/back-to-search.svg" alt="return to search"/></li>
+					<li class="bold settings-menu"><a href="#">Settings</a></li>
+					<li id="acctSettings" class="profile-display"><a href="#">Account</a></li>
+
+					<li id="mobile-playon">
+						<div class="playon-ctrl">
+
+							<h3>Play on</h3>
+
+							<select class="play-on">
+								<!-- dynamically loaded option elements -->
+							</select>
+						</div><!-- /.playon-ctrl-->
+					</li>
+
+
+					<li class="bold library-menu">Library         <span class="light-gray light" id="collectionCount"><span id="collectionTotal"> </span>  songs</span></li>
+					<li class="viewSongs"><a href="#">Songs</a></li>
+					<li class="viewArtists"><a href="#">Artists</a></li>
+					<li class="viewAlbums"><a href="#">Albums</a></li>
+					<li class="viewGenres"><a href="#">Genres</a></li>
+				</ul>
+			</div><!-- /.library-nav-->
+
+			<div class="playlist-nav">
+				<h3 class="bold">Playlists</h3>
+
+				<div class="playlist-scroll-container">
+					<ul id="playlistWrapper">
+
+
+					</ul>
+				</div><!-- /.playlist-scroll-container -->
+
+
+
+
+
+
+
+
+
+
+
+			</div><!-- /.playlist-nav-->
+		</aside>
+
+
+
+				<div class="video-size-ctrl">
+
+
+					<img id="video-min" class="svg" src="images/icons/min.svg" alt="hide video icon"/>
+					<img id="video-full" class="svg" src="images/icons/fullscreen.svg" alt="watch video fullscreen icon"/>
+					<a id="watchOnYoutube" title="Watch on YouTube" href="" target="_blank"><img class="svg" src="images/icons/watchyoutube.svg" alt="watch video on youtube icon"/></a>
+				</div><!-- /.video-size-ctrl -->
+
+
+
+				<div id="video"></div>
+
+
+
+		<section class="app">
+			<div id="mobile-header">
+				<img id="menu-btn" src="images/icons/menu-btn.png" alt="mobile menu button"/>
+
+				<img class="mobile-logo" src="images/logo-lt.png" height="36" alt="yootunes logo"/>
+			</div><!-- /#mobile-header-->
+
+			<div class="section-header">
+
+				<div class="search">
+					<form id="searchForm" >
+						<input id="searchInput" type="text" placeholder="Search YouTube for songs, artists, albums, or genres" autofocus/>
+						<img id="search-icon" title="Search" src="images/icons/search.svg" alt="Search"/>
+						<input id="searchSubmit" type="submit" value=""/>
+
+					</form>
+				</div><!-- /.search-->
+			</div><!-- /.section-header-->
+
+
+
+			<div class="main-container">
+
+				<ul class="fade-down">
+					<li class="li-header"><!-- list item group-->
+						<span id="playAll" title="Play all songs" class="li-col1 play-all-icon"><!--<img id="playAllIcon" class="svg" src="images/icons/play-drk.png" alt="play all icon"/>--></span>
+							<span class="li-col2 viewSongs">Title</span>
+								<span class="li-col3 viewArtists">Artist</span>
+									<span class="li-col4 viewAlbums">Album</span>
+								<span class="li-col7 sourceTitle">Library</span>
+							<span class="li-col5 viewGenres">Genre</span>
+						<!-- <span class="li-col6">Length</span> -->
+					</li>
+				</ul>
+
+
+
+
+
+				<div class="scroll-container">
+
+				</div><!-- /.scroll-container-->
+			</div><!-- /.main-container-->
+		</section><!-- /.app-->
+
+
+		<!-- displays a loading icon while search results are fetched -->
+		<div class="loading">
+			<h2>Tip: If your search returns no results, run the same search again. Large data results may take a second to finish.</h2>
+		</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<div class="footer">
+			<div class="info">
+
+				<img class="svg logo playingAnimation" src="images/icons/note.svg" alt="yootunes logo"/>
+				<!-- note.svg-->
+
+				<ul>
+					<li id="infoTitle" class="truncate"></li>
+					<li id="infoArtist" class="truncate"></li>
+					<li id="infoAlbum" class="truncate"></li>
+				</ul>
+			</div><!-- /.info-->
+
+
+
+			<div class="transport-ctrl">
+
+				<img id="prev-btn" class="svg prev" src="images/icons/prev.svg" alt="previous track control icon" />
+				<img id="play-btn" class="play" src="images/icons/play-wht.png" alt="previous track control icon" />
+				<img id="next-btn" class="svg next" src="images/icons/next.svg" alt="previous track control icon" />
+			</div><!-- /.transport-ctrl-->
+
+
+
+			<div class="seek-ctrl">
+
+				<div class="seek-buffered">
+				</div><!-- /.seek-buffered-->
+
+				<div class="seek-fill">
+				</div><!-- /.seek-fill-->
+
+				<div id="seek-bar">
+
+					<div id="seek-dot"></div><!-- /#seek-dot-->
+
+						<div class="seek-line"></div><!-- /.seek-line-->
+				</div><!-- /#seek-bar-->
+
+				<p id="current-time"></p>
+			</div><!-- /.seek-ctrl-->
+
+
+
+
+
+			<div class="playmode-ctrl">
+					<img  id="loopSong" src="images/icons/loop-icon.png" title="Loop this song" alt="loop icon" />
+					<img  id="shuffleResults" src="images/icons/shuffle-icon.png" title="Shuffle these results" alt="shuffle icon" />
+			</div><!-- /.playmode-ctrl-->
+
+
+
+
+
+			<div class="volume-ctrl">
+
+					<img class="svg vol-icon" src="images/icons/volume-icon.svg" title="Volume" alt="volume icon" />
+
+					<input id="volumeRange" type="range" min="0" max="100" step="10" value="100"/>
+
+
+			</div><!-- /.volume-ctrl-->
+
+
+
+			<div class="playing-share-ctrl">
+
+				<div class="share-strip">
+
+					<a id="fbShareMain" target="_blank" href=""><img class="svg" src="images/icons/fb-color.png" alt="share icon" /></a>
+					<a id="googleShareMain" target="_blank" href=""><img class="svg" src="images/icons/google-color.png" alt="share icon" /></a>
+					<a id="twitterShareMain" target="_blank" href=""><img class="svg" src="images/icons/twitter-color.png" alt="share icon" /></a>
+
+					<a id="linkShareMain" class="linkShare" target="_blank" href=""><img class="svg" src="images/icons/link.svg" alt="share icon" /></a>
+				</div><!-- /.share-strip-->
+			</div><!-- /.playing-share-ctrl-->
+
+
+
+			<div class="playon-ctrl">
+
+				<h3>Play on</h3>
+
+				<select class="play-on">
+					<!-- dynamically loaded option elements -->
+				</select>
+			</div><!-- /.playon-ctrl-->
+
+
+		</div><!-- /.footer-->
+
+
+	</div><!-- /#app-->
+
+
+
+
+	</script>
+</div>

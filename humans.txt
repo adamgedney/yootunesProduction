@@ -1,0 +1,28 @@
+ 
+                        
+
+    /* TEAM */
+    Your title: Adam Shields Gedney.
+    Site: http://adamgedney.com  |  adam.gedney@gmail.com
+
+    Twitter: @frontenderwear
+    Location: Winter Park, FL  USA
+
+                 
+                        [...]
+						
+
+    /* THANKS */
+    Name: http://facebook.com/shieldsadam
+
+                 
+                        [...]
+                        
+
+    /* SITE */
+    Project Start: 03/19/14
+    Standards: HTML5, CSS3, SASS, JS, JQuery, PHP, Laravel Framework, MySQL, Firebase, Grunt, NPM, Composer, Compass..
+    Software: GitHub, Sublime Text 2
+
+
+                    

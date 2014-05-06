@@ -1,0 +1,130 @@
+<div>
+	<script id="libraryItem" type="text/x-handlebars-template">
+
+	<ul id="libraryWrapper">
+
+
+		{{#each song}}
+
+		<li class="li-group resultItems" data-id="{{this.id}}" data-videoId="{{youtube_id}}" data-index="" data-resultLength="" ><!-- list item group-->
+			<span data-videoId="{{youtube_id}}" data-song="{{youtube_title}}" data-artist="{{artist}}" data-album="{{album}}" class="li-col1 play-icon" title="start playing from here">
+				<img data-videoId="{{youtube_id}}" class="playIconImg" src="images/icons/play-drk.png" alt="track play icon" />
+			</span>
+
+			<span data-id="{{this.id}}" class="dropdown-trigger">
+				<span title="{{this.youtube_title}}" class="li-col2 truncate">{{this.youtube_title}}</span>
+					<span class="li-col3">{{this.artist}} </span>
+						<span class="li-col4">{{this.album}} </span>
+			</span><!-- /.dropdown-trigger-->
+
+					<span data-id="{{this.id}}" data-user="{{../user.userId}}" data-in-library="false" data-libid="{{this.library_id}}" data-playlistId="{{this.playlist_id}}" title="Add to library" class="li-col7 addToLibrary"><img class="add-icon" src="images/icons/trash-icon.png" alt="add to library icon" />
+					</span>
+
+				<span data-id="{{this.id}}" class="dropdown-trigger">
+					<span class="li-col6">{{this.length}}</span>
+						<span class="li-col5">{{this.genre}}</span>
+				</span><!-- /.dropdown-trigger-->
+		</li>
+
+
+
+
+
+
+
+
+
+
+
+		<!-- Popdown li -->
+		<li data-id="{{this.id}}" class="li-group dropdown main-dropdown"><!-- list item group-->
+			<span class="li-col1"><a data-lightbox="0" title="{{this.youtube_title}}" href="{{this.img_high}}" ><img class="thumb youtube-img" src="{{this.img_default}}" alt="track play icon" /></a></span>
+
+				<span class="li-desc">{{this.description}}</span>
+
+
+				<ul class="dropdown-main-menu">
+
+					<!-- Main Menu li **Add to Playlists-->
+					<li class="add-to-playlist-menu-trigger">
+						<span class="more-arrow add-to-playlist">
+							<!-- <img class="svg" src="images/icons/more-arrow-left.svg" alt="more arrow"/> -->
+						</span>
+
+
+									<!-- Sub Main Menu li-->
+									<ul class="popout add-to-playlist-menu">
+										<li class="playlist-menu-form">
+											<p class="bold createNewPlaylistLink">
+												<img class="svg" src="images/icons/add.svg" alt="add icon" />
+													Create new playlist
+
+											</p>
+
+											<form class="newPlaylistForm">
+												<input type="text" class="main-menu-new-playlist-input newPlaylistInput" placeholder="New playlist name"/>
+
+												<input data-id="{{this.id}}" data-user="{{../user.userId}}" class="newPlaylistSubmit" type="submit" value="Save"/>
+											</form>
+										</li>
+
+										<li class="playlist-menu-header">
+											<p class="bold addToPlaylistTitle">
+												<img class="svg more-arrow-down" src="images/icons/more-arrow-down.svg" alt="add icon" />
+													Add to playlist</p>
+										</li>
+										<li data-id="{{this.id}}" class="playlistSubScrollContainer">
+
+												<!-- Sub menu playlist loop-->
+
+										</li>
+									</ul>
+					</li>
+
+
+
+
+					<!-- Main Menu Buy on iTunes   -->
+					<li class="li-buy">
+						{{#if this.itunes_song}}
+							<a href="{{this.itunes_song}}" target="itunes_store"><img src="images/itunes-logo.jpg" alt="download on itunes"/></a>
+						{{else}}
+
+							{{#if this.itunes_artist}}
+								<a href="{{this.itunes_artist}}" target="itunes_store"><img src="images/itunes-logo.jpg" alt="download on itunes"/></a>
+							{{else}}
+								{{#if this.itunes_album}}
+									<a href="{{this.itunes_album}}" target="itunes_store"><img src="images/itunes-logo.jpg" alt="download on itunes"/></a>
+								{{/if}}
+							{{/if}}
+						{{/if}}
+
+
+					</li>
+
+
+
+
+					<!-- Main Menu **li Share-->
+					<li class="li-share">
+					Share
+						<div class="share-strip">
+							<a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.youtube.com/watch?v={{youtube_id}}"><img class="svg" src="images/icons/fb-color.png" alt="share icon" /></a>
+							<a target="_blank" href="https://plus.google.com/share?url=https://www.youtube.com/watch?v={{youtube_id}}"><img class="svg" src="images/icons/google-color.png" alt="share icon" /></a>
+							<a target="_blank" href="https://twitter.com/home?status=https://www.youtube.com/watch?v={{youtube_id}}"><img class="svg" src="images/icons/twitter-color.png" alt="share icon" /></a>
+							<a class="linkShare" href="https://www.youtube.com/watch?v={{youtube_id}}"><img class="svg" src="images/icons/link.svg" alt="share icon" /></a>
+						</div><!-- /.share-strip-->
+					</li>
+				</ul>
+		</li>
+	{{/each}}
+
+	<li class="li-group"><!-- list item group--></li>
+
+
+	</ul>
+
+<!--
+https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fsploid.gizmodo.com%2Fcrazy-guys-drive-their-car-sideways-on-the-ground-1564501160%2F%2Bcaseychan-->
+	</script>
+</div>
