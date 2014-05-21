@@ -5,8 +5,8 @@
 
 	<!-- Modal overlay  -->
 	<div id="nameDeviceModal" class="modal-container">
-		<div class="modal">
-			<img class="modalCloseIcon" src="images/close.png" alt="close window icon"/>
+		<div title="This is where you name this device you're using. By naming it you enable yourself, and yourself, alone to play music on it from any of your other devices. Probably my favorite feature. Yup. I'm lazy and don't want to get up to change the song on my other computer that's so conveiniently plugged in to my stereo. Woot!" class="modal">
+			<img draggable="false" class="modalCloseIcon" src="images/close.png" alt="close window icon"/>
 
 			<h2 class="">Name this device</h2>
 			<p>So you can control it from another device of yours</p>
@@ -34,39 +34,57 @@
 
 
 
+
+	<img draggable="false" id="mouseAddIcon" src="images/icons/mouse-add.png" />
+
 	<div id="app">
 
 		<aside class="app">
 
 			<div class="library-nav">
 
-				<ul>
-					<li id="returnToSearch" >Return to search results  <img title="Return to search" src="images/icons/back-to-search.svg" alt="return to search"/></li>
-					<li class="bold settings-menu"><a href="#">Settings</a></li>
-					<li id="acctSettings" class="profile-display"><a href="#">Account</a></li>
+			<img draggable="false" title="Yup. This is the atomPlayer. It came about because some small group of us (about 7,000,000 people to be exact) listen to music on YouTube. We find lots of old, great, unreleased music. It fuels our sub-culture and entertains us without end. We had a problem though, all 7,000,000 of us... We had no way to horde those videos. YouTube playlists don't cut it. We needed a bad ass library manager. Voila! Hope you enjoy it!" class="app-logo" src="images/atom-logo.png" height="36" alt="yootunes logo"/>
 
+				<span id="beta-tag">beta v1.0.7</span>
+
+				<ul>
 					<li id="mobile-playon">
 						<div class="playon-ctrl">
 
 							<h3>Play on</h3>
 
-							<select class="play-on">
+							<select id="mobile-play-on">
 								<!-- dynamically loaded option elements -->
 							</select>
 						</div><!-- /.playon-ctrl-->
 					</li>
 
 
-					<li class="bold library-menu">Library         <span class="light-gray light" id="collectionCount"><span id="collectionTotal"> </span>  songs</span></li>
-					<li class="viewSongs"><a href="#">Songs</a></li>
-					<li class="viewArtists"><a href="#">Artists</a></li>
-					<li class="viewAlbums"><a href="#">Albums</a></li>
-					<li class="viewGenres"><a href="#">Genres</a></li>
+					<li class="bold library-menu">Library         <span class="light-gray light" id="collectionCount"><span title="I dare you to add 1 song each day for the next 60 years." id="collectionTotal"> </span>  songs</span></li>
+					<li title="Sort your Library by song title. Well... By YouTube title, actually." class="viewSongs"><a href="#">Songs</a></li>
+					<li title="Sort your Library by artist name. Got any Richie Hawtin in there?" class="viewArtists"><a href="#">Artists</a></li>
+					<li title="Sort your Library by album name. 10 points if you have one called Lateralus!" class="viewAlbums"><a href="#">Albums</a></li>
+					<li title="Sort your Library by genre. How about some Opera?" class="viewGenres"><a href="#">Genres</a></li>
 				</ul>
 			</div><!-- /.library-nav-->
 
+
+
 			<div class="playlist-nav">
-				<h3 class="bold">Playlists</h3>
+
+			<span id="revealForm">
+				<h3 title="Click here to create a new playlist" id="playlistsTitle" class="bold">Playlists <img draggable="false" class="add-playlist-icon" src="images/icons/add.png" alt="new playlist icon" /></h3>
+
+				<div id="hiddenCreatePlaylistForm">
+					<form class="">
+						<input type="text" class="newPlaylistInput" placeholder="New playlist name"/>
+
+						<input data-id="" data-user="" class="newPlaylistSubmit" type="submit" value="Save" maxlength="25"/>
+					</form>
+				</div><!-- /#hiddenCreatePlaylistForm-->
+			</span><!-- #/revealForm-->
+
+
 
 				<div class="playlist-scroll-container">
 					<ul id="playlistWrapper">
@@ -76,14 +94,10 @@
 				</div><!-- /.playlist-scroll-container -->
 
 
-
-
-
-
-
-
-
-
+				<ul class="settings-nav">
+					<li class="bold settings-menu"><a href="#" >Settings</a></li>
+					<li title="View your account setting, logout, or change your theme" id="acctSettings" class="profile-display"><a href="#">Account</a></li>
+				</ul>
 
 			</div><!-- /.playlist-nav-->
 		</aside>
@@ -93,32 +107,40 @@
 				<div class="video-size-ctrl">
 
 
-					<img id="video-min" class="svg" src="images/icons/min.svg" alt="hide video icon"/>
-					<img id="video-full" class="svg" src="images/icons/fullscreen.svg" alt="watch video fullscreen icon"/>
-					<a id="watchOnYoutube" title="Watch on YouTube" href="" target="_blank"><img class="svg" src="images/icons/watchyoutube.svg" alt="watch video on youtube icon"/></a>
+					<img draggable="false" title="Hide or show a small video window" id="video-min" class="svg" src="images/icons/min.svg" alt="hide video icon"/>
+					<img draggable="false" title="Watch this video in full screen" id="video-full" class="svg" src="images/icons/fullscreen.svg" alt="watch video fullscreen icon"/>
+					<a title="Watch this video on YouTube. Bet you were wondering why the other icons to the left there had such boring messages." id="watchOnYoutube" href="" target="_blank"><img draggable="false" class="svg" src="images/icons/watchyoutube.svg" alt="watch video on youtube icon"/></a>
 				</div><!-- /.video-size-ctrl -->
 
 
+				<div id="video-overlay"></div>
+					<div id="video"></div>
 
-				<div id="video"></div>
 
 
 
 		<section class="app">
 			<div id="mobile-header">
-				<img id="menu-btn" src="images/icons/menu-btn.png" alt="mobile menu button"/>
+				<!-- miniize video overlay button for mobile devices-->
+				<div id="minimizeOverlay" ><img draggable="false" title="Hide or show a small video window" id="video-min" class="svg" src="images/icons/min.svg" alt="minimize video icon"/></div>
 
-				<img class="mobile-logo" src="images/logo-lt.png" height="36" alt="yootunes logo"/>
+				<img draggable="false" id="menu-btn" src="images/icons/menu-btn.png" alt="mobile menu button"/>
+
+				<img draggable="false" class="mobile-logo" src="images/atom-logo.png" height="36" alt="atomplayer logo"/>
 			</div><!-- /#mobile-header-->
 
 			<div class="section-header">
 
+			<div id="returnToSearch" ><img draggable="false" title="Clicking this arrow will open a temporal wormhole straight back to the Alpha Quadrant. And it'll reload your last search query" src="images/icons/back-to-search.svg" alt="return to search"/>
+			</div><!-- /#returnToSearch-->
+
 				<div class="search">
 					<form id="searchForm" >
-						<input id="searchInput" type="text" placeholder="Search YouTube for songs, artists, albums, or genres" autofocus/>
-						<img id="search-icon" title="Search" src="images/icons/search.svg" alt="Search"/>
-						<input id="searchSubmit" type="submit" value=""/>
 
+						<input id="searchInput" type="text" placeholder="Search YouTube for music" autofocus/>
+
+						<img draggable="false" id="search-icon" title="Search" src="images/icons/search.svg" alt="Search"/>
+						<input title="Does anyone click buttons anymore? I just hit enter. For fun I hit enter. My whole life is an enter button. It's strange being a button sometimes. Me and my buddy Poke, over on Facebook, are going to go drink now." id="searchSubmit" type="submit" value=""/>
 					</form>
 				</div><!-- /.search-->
 			</div><!-- /.section-header-->
@@ -127,14 +149,17 @@
 
 			<div class="main-container">
 
+			<ul id="datalistContainer"></ul>
+
+
 				<ul class="fade-down">
 					<li class="li-header"><!-- list item group-->
-						<span id="playAll" title="Play all songs" class="li-col1 play-all-icon"><!--<img id="playAllIcon" class="svg" src="images/icons/play-drk.png" alt="play all icon"/>--></span>
-							<span class="li-col2 viewSongs">Title</span>
-								<span class="li-col3 viewArtists">Artist</span>
-									<span class="li-col4 viewAlbums">Album</span>
-								<span class="li-col7 sourceTitle">Library</span>
-							<span class="li-col5 viewGenres">Genre</span>
+						<span id="playAll" title="Play all songs" class="li-col1 play-all-icon"><!--<img draggable="false" id="playAllIcon" class="svg" src="images/icons/play-drk.png" alt="play all icon"/>--></span>
+							<span title="Sort these tunes by title. A-Z Z-A Baby!" class="li-col2 mainViewSongs">Title</span>
+								<span title="I dare you to sort by artist." class="li-col3 mainViewArtists">Artist</span>
+									<span title="Did you sort by artist? Were you scared? Ok ok. Try sorting by album then." class="li-col4 mainViewAlbums">Album</span>
+								<span class="li-col7 sourceTitle"></span>
+							<span title="My genre of choice is hot sauce. And ambient music. And wine."class="li-col5 mainViewGenres">Genre</span>
 						<!-- <span class="li-col6">Length</span> -->
 					</li>
 				</ul>
@@ -143,8 +168,7 @@
 
 
 
-				<div class="scroll-container">
-
+				<div id="scroll-container">
 				</div><!-- /.scroll-container-->
 			</div><!-- /.main-container-->
 		</section><!-- /.app-->
@@ -169,11 +193,8 @@
 
 
 		<div class="footer">
-			<div class="info">
-
-				<img class="svg logo playingAnimation" src="images/icons/note.svg" alt="yootunes logo"/>
-				<!-- note.svg-->
-
+			<div title="Now playing" class="info">
+			<!-- <a id="lbThumb" data-lightbox="" href=""><img id="infoThumb" src=""></a> -->
 				<ul>
 					<li id="infoTitle" class="truncate"></li>
 					<li id="infoArtist" class="truncate"></li>
@@ -185,9 +206,9 @@
 
 			<div class="transport-ctrl">
 
-				<img id="prev-btn" class="svg prev" src="images/icons/prev.svg" alt="previous track control icon" />
-				<img id="play-btn" class="play" src="images/icons/play-wht.png" alt="previous track control icon" />
-				<img id="next-btn" class="svg next" src="images/icons/next.svg" alt="previous track control icon" />
+				<img draggable="false" title="Skip back 1 track" id="prev-btn" class="svg prev" src="images/icons/prev.svg" alt="previous track control icon" />
+				<img draggable="false" title="Play"id="play-btn" class="play" src="images/icons/play-wht.png" alt="previous track control icon" />
+				<img draggable="false" title="Skip forward 1 track" id="next-btn" class="svg next" src="images/icons/next.svg" alt="previous track control icon" />
 			</div><!-- /.transport-ctrl-->
 
 
@@ -215,8 +236,8 @@
 
 
 			<div class="playmode-ctrl">
-					<img  id="loopSong" src="images/icons/loop-icon.png" title="Loop this song" alt="loop icon" />
-					<img  id="shuffleResults" src="images/icons/shuffle-icon.png" title="Shuffle these results" alt="shuffle icon" />
+					<img draggable="false"  id="loopSong" src="images/icons/loop-icon.png" title="Loop this song" alt="loop icon" />
+					<img draggable="false"  id="shuffleResults" src="images/icons/shuffle-icon.png" title="Shuffle these results" alt="shuffle icon" />
 			</div><!-- /.playmode-ctrl-->
 
 
@@ -225,7 +246,7 @@
 
 			<div class="volume-ctrl">
 
-					<img class="svg vol-icon" src="images/icons/volume-icon.svg" title="Volume" alt="volume icon" />
+					<img draggable="false" class="svg vol-icon" src="images/icons/volume-icon.svg" title="Click to mute/unmute" alt="volume icon" />
 
 					<input id="volumeRange" type="range" min="0" max="100" step="10" value="100"/>
 
@@ -236,23 +257,23 @@
 
 			<div class="playing-share-ctrl">
 
-				<div class="share-strip">
+				<div id="footerShare" class="share-strip">
 
-					<a id="fbShareMain" target="_blank" href=""><img class="svg" src="images/icons/fb-color.png" alt="share icon" /></a>
-					<a id="googleShareMain" target="_blank" href=""><img class="svg" src="images/icons/google-color.png" alt="share icon" /></a>
-					<a id="twitterShareMain" target="_blank" href=""><img class="svg" src="images/icons/twitter-color.png" alt="share icon" /></a>
+					<a title="Share this sweet YouTube video on Facebook" id="fbShareMain" target="_blank" href=""><img draggable="false" class="svg" src="images/icons/fb-color.png" alt="share icon" /></a>
+					<a title="Share this little gem of a YouTube video on G+" id="googleShareMain" target="_blank" href=""><img draggable="false" class="svg" src="images/icons/google-color.png" alt="share icon" /></a>
+					<a title="Share this awesome YouTube video on Twitter" id="twitterShareMain" target="_blank" href=""><img draggable="false" class="svg" src="images/icons/twitter-color.png" alt="share icon" /></a>
 
-					<a id="linkShareMain" class="linkShare" target="_blank" href=""><img class="svg" src="images/icons/link.svg" alt="share icon" /></a>
+					<a title="Get the link and share this puppy EVERYWHERE!" id="linkShareMain" class="linkShare" target="_blank" href=""><img draggable="false" class="svg" src="images/icons/link.svg" alt="share icon" /></a>
 				</div><!-- /.share-strip-->
 			</div><!-- /.playing-share-ctrl-->
 
 
 
-			<div class="playon-ctrl">
+			<div title="Probably our best feature... Besides our hair, of course. If you're logged in on multiple devices you can control one device from another. Computer connected to your TV and home theater system? Great! Control atomPlayer from another computer, phone, or tablet. It's a party!" class="playon-ctrl">
 
 				<h3>Play on</h3>
 
-				<select class="play-on">
+				<select id="play-on">
 					<!-- dynamically loaded option elements -->
 				</select>
 			</div><!-- /.playon-ctrl-->

@@ -1,0 +1,1 @@
+(function(){define(["jquery","qtip"],function(e,t){var n=function(){e(document).find("[title]").qtip({style:{classes:"qtip-tipsy"},position:{target:[9,9]},show:{delay:1e3},hide:{event:"click mouseleave",delay:500}})};return n})})();

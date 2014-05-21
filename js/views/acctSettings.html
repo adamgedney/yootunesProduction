@@ -24,7 +24,8 @@
 				<p class="">Basic info <span class="small" id="infoId"></span></p>
 
 					<form>
-						<label for="infoTitle">Title</label>
+
+						<label for="infoTitleGender">Title</label>
 						<select id="infoTitleGender">
 
 						</select>
@@ -39,11 +40,13 @@
 						<input id="infoBirthdate" type="text" class="" placeholder="month/day/year"/>
 
 						<input id="updateInfo" type="submit" value="Save"/>
+
+						<p id="updateProfileError" ></p>
 					</form>
 
 				<p class="second-form">Change your password</p>
 
-					<form>
+					<form id="resetPassSettingsForm">
 
 						<label for="infoCurrentPass">Current Password</label>
 						<input id="infoCurrentPass" type="password" class="" placeholder="Current Password"/>
@@ -55,6 +58,8 @@
 						<input id="infoPassAgain" type="password" class="" placeholder="Password again"/>
 
 						<input id="resetPasswordInfo" type="submit" value="Change Password"/>
+
+						<p id="resetPasswordError" ></p>
 					</form>
 
 			</div><!-- /.info-col1 -->
@@ -67,9 +72,9 @@
 
 					<form>
 						<label for="infoDeviceName">This device</label>
-						<input class="infoDeviceName" type="text" data-id="" value="" placeholder="Name this device"/>
+						<input id="renameDeviceName" type="text" data-id="" value="" placeholder="Name this device"/>
 
-						<input id="submitDeviceName" type="submit" value="Save"/>
+						<input id="submitRenameDevice" type="submit" value="Save"/>
 					</form>
 
 					<label for="infoDeviceList">Your other devices</label>
@@ -81,34 +86,19 @@
 
 			<div class="info-col3">
 
-				<p class="">Upgrade to ad free <span class="small">$5/month</span></p>
-
-					<form>
-						<label for="infoCardName">Name on Card</label>
-						<input id="infoCardName" type="text" class="" value="" placeholder="Name on Card"/>
-
-						<label for="infoCardNum">Card #</label>
-						<input id="infoCardNum" type="text" class="" value="" placeholder="Card #"/>
-
-						<label for="infoExpir">Expiration</label>
-						<input id="infoExpir" type="text" class="" value="" placeholder="Expiration"/>
-
-						<label for="infoCSC">CSC</label>
-						<input id="infoCSC" type="text" class="" value="" placeholder="CSC"/>
-
-						<input id="upgradeInfo" type="submit" value="Upgrade"/>
-					</form>
+				<p class="">Account Options </p>
 
 
-				<p class="second-form">Account Options</p>
-
-					<input id="themeDark" type="checkbox"/>
-					<label for="themeDark">Use dark theme</label></br>
+					<!-- <input id="themeDark" type="checkbox"/>
+					<label for="themeDark">Use dark theme</label></br> -->
 
 					<input id="emailUpdatesInfo" type="checkbox" value="receiveEmails" checked/>
-					<label for="emailUpdatesInfo">Receive email updates</label>
+					<label for="emailUpdatesInfo">Receive email updates</label></br>
 
-					<button id="logoutLink">Log out of YooTunes</button>
+					<input id="disableTips" type="checkbox"/>
+					<label for="disableTips">Disable tips</label></br>
+
+					<button id="logoutLink">Log out of atomPlayer</button>
 					<button id="deleteAccount" >Delete Account</button>
 
 

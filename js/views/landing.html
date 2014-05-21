@@ -1,8 +1,8 @@
 <div>
 	<script id="landing" type="text/x-handlebars-template">
 
-		<header>
-			<img src="images/logo-lt.png" height="36" alt="yootunes logo"/>
+		<header >
+			<img draggable="false" src="images/atom-logo.png" height="36" alt="atomPlayer logo"/>
 
 			<button id="sign-in-btn" class="outline">Log In</button>
 
@@ -41,7 +41,7 @@
 		<!-- Modal overlay  -->
 		<div id="restoreAcctModal" class="modal-container">
 			<div class="modal">
-				<img class="modalCloseIcon" src="images/close.png" alt="close window icon"/>
+				<img draggable="false" class="modalCloseIcon" src="images/close.png" alt="close window icon"/>
 
 				<h2 >Looks like we've crossed paths before.</h2>
 				<p>We see that you previously deleted your account. Would you like to restore your old account, or create a new one? If you create a new one you will no longer be able to restore that old account.</p>
@@ -55,43 +55,50 @@
 
 
 
-		<section class="hero">
+		<section id="top" class="hero">
 			<div class="cta">
-				<h2>A library for all your YouTube<span class="small super">®</span> music.</h2>
+				<h2>AtomPlayer is a library manager for all your favorite YouTube<span class="small super">®</span> music.</h2>
 
-				<p><span class="bold">YooTunes was designed</span> to give you a better and more intuitive music playing experience. It plays, saves, and organizes all your favorite YouTube music. Best of all, it’s free! Sign up and <span class="bold">see what all the hype is about.</span></p>
-			</div><!-- /.cta-->
-
+				<!-- <p><span class="bold">YooTunes was designed</span> to give you a better and more intuitive music playing experience. It plays, saves, and organizes all your favorite YouTube music. Best of all, it’s free! Sign up and <span class="bold">see what all the hype is about.</span></p> -->
 
 
-			<div class="signup">
-				<h2>Create an account in 7 seconds...</h2>
+				<button class="get-started" id="getStarted">Try it out!</button>
 
-				<form>
-					<input id="signupEmail" type="email" placeholder="Email Address"/>
-					<input id="signupPass" type="password" placeholder="Password"/>
-					<input id="signupPassAgain" type="password" placeholder="Password Again"/>
 
-					<input id="signupSubmit" type="Submit" value="Sign up" />
 
-					<p class="or">-or-</p>
 
-					<div class="plusContainerLG">
-						<div class="g-signin" id="gPlusSignIn"
-					        data-scope="https://www.googleapis.com/auth/plus.login"
-					        data-clientid="25005213504-eimnnfsrdl50a1he27vrngio73kvji9j.apps.googleusercontent.com"
-					        data-theme="dark"
-					        data-callback="authCallback"
-					        data-cookiepolicy="single_host_origin"
-					        data-requestvisibleactions="http://schemas.google.com/AddActivity"
-					        data-width="wide"
-					        data-height="tall"
-					        >
-					    </div>
-					</div><!-- /.plusContainerLG-->
-				</form>
-			</div><!-- /.signup-->
-		</section><!-- /.cta-->
+
+				<div class="signup" id="signupContainer">
+					<h2>Create an account in 7s...</h2>
+
+					<form>
+						<input id="signupEmail" type="email" placeholder="Email Address"/>
+						<input id="signupPass" type="password" placeholder="Password"/>
+						<input id="signupPassAgain" type="password" placeholder="Password Again"/>
+
+						<input id="signupSubmit" type="Submit" value="Sign up" />
+
+						<p class="error-afford signupError"></p>
+
+						<div class="plusContainerLG">
+							<div class="g-signin" id="gPlusSignIn"
+						        data-scope="https://www.googleapis.com/auth/plus.login"
+						        data-clientid="25005213504-eimnnfsrdl50a1he27vrngio73kvji9j.apps.googleusercontent.com"
+						        data-theme="dark"
+						        data-callback="authCallback"
+						        data-cookiepolicy="single_host_origin"
+						        data-requestvisibleactions="http://schemas.google.com/AddActivity"
+						        data-width="wide"
+						        data-height="tall"
+						        >
+						    </div>
+						</div><!-- /.plusContainerLG-->
+					</form>
+				</div><!-- /.signup-->
+
+
+				</div><!-- /.cta-->
+		</section><!-- /.hero-->
 
 
 
@@ -102,27 +109,27 @@
 
 			<div class="diagram">
 				<div>
-					<img class="svg" src="images/icons/search-videos.svg" alt="how to icon"/>
+					<img draggable="false" class="svg" src="images/icons/search-videos.svg" alt="how to icon"/>
 					<p>Search YouTube through YooTunes</p>
 				</div>
 
 				<div>
-					<img class="svg" src="images/icons/library-icon.svg" alt="how to icon"/>
+					<img draggable="false" class="svg" src="images/icons/library-icon.svg" alt="how to icon"/>
 					<p>Add music to your library</p>
 				</div>
 
 				<div>
-					<img class="svg" src="images/icons/folder-icon.svg" alt="how to icon"/>
+					<img draggable="false" class="svg" src="images/icons/folder-icon.svg" alt="how to icon"/>
 					<p>Organize & sort your library</p>
 				</div>
 
 				<div>
-					<img class="svg" src="images/icons/playlist-icon.svg" alt="how to icon"/>
+					<img draggable="false" class="svg" src="images/icons/playlist-icon.svg" alt="how to icon"/>
 					<p>Add music to your playlists</p>
 				</div>
 
 				<div>
-					<img class="svg" src="images/icons/share-icon.svg" alt="how to icon"/>
+					<img draggable="false" class="svg" src="images/icons/share-icon.svg" alt="how to icon"/>
 					<p>Share songs and playlists</p>
 				</div>
 
@@ -135,18 +142,16 @@
 
 		<section class="details">
 			<div class="shots">
-				<img src="images/shots.jpg" alt="YooTunes screenshots" />
+				<img draggable="false" src="images/shots.jpg" alt="YooTunes screenshots" />
 			</div><!-- /.shots -->
 
 
 			<div class="copy">
 				<h2>Finally, listen to YouTube<span class="small super">®</span> the right way...</h2>
 
-				<p>You love listening to music on YouTube but you understand how difficult that can be. YouTube was designed to play videos, not music. YouTunes is an awesome new music player that lets you search YouTube, save songs to your library, make playlists and share with friends. </p>
+				<p>atomPlayer is an awesome new music player that lets you search YouTube, save songs to your library, make playlists and share with friends. </p>
 
-				<p>Best of all, there are no annoying ads before each video! What are you waiting for? Sign up.</p>
-
-				<button class="copy-signup">Sign up</button>
+				<a href="#top" class="copy-signup .button">Try it out</a>
 			</div><!-- /.copy -->
 		</section><!-- /.details -->
 
@@ -169,18 +174,17 @@
 
 
 			<div class="col-2">
-				<img src="images/logo-lt.png" height="36" alt="yootunes logo"/>
+				<img draggable="false" src="images/atom-logo.png" height="36" alt="atomPlayer logo"/>
 
-				<p>&copy;2014 YooTunes.com. All rights reserved.</p>
+				<p>&copy;2014 atomPlayer.com. All rights reserved.</p>
 			</div><!-- /.col-2 -->
 
 
 			<div class="col-3">
 				<ul>
-					<li><a href="#"><img class="svg" src="images/icons/facebook.svg" alt="social icon"/></a></li>
-					<li><a href="#"><img class="svg" src="images/icons/google.svg" alt="social icon"/></a></li>
-					<li><a href="#"><img class="svg" src="images/icons/linkedin.svg" alt="social icon"/></a></li>
-					<li><a href="#"><img class="svg" src="images/icons/twitter.svg" alt="social icon"/></a></li>
+					<li><a href="https://www.facebook.com/sharer/sharer.php?u=http://atomplayer.com"><img draggable="false" class="svg" src="images/icons/facebook.svg" alt="social icon"/></a></li>
+					<li><a href="https://plus.google.com/share?url=http://atomplayer.com"><img draggable="false" class="svg" src="images/icons/google.svg" alt="social icon"/></a></li>
+					<li><a href="https://twitter.com/home?status=http://atomplayer.com"><img draggable="false" class="svg" src="images/icons/twitter.svg" alt="social icon"/></a></li>
 				</ul>
 			</div><!-- /.col-3 -->
 		</footer>

@@ -1,0 +1,1 @@
+(function(){require(["jquery"],function(e){var t={};t.yPos=0,t.hero=e("section.hero"),t.position=e(window).scrollTop(),t.current=0,e(window).on("scroll",function(){var n=e(window).scrollTop();n>t.position?t.yPos-=1.5:(t.yPos+=1.5,n>680&&(t.yPos=-1));var r="0 "+t.yPos+"px";e("section#top").css("background-position",r),t.position=n})})})();
