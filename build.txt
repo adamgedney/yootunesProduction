@@ -30,7 +30,6 @@ js/controllers/library.js
 js/services/dragAndDropPlaylists.js
 js/services/videoSizer.js
 js/services/slider.js
-js/libs/lightbox-2.6.min.js
 js/libs/qtip.js
 js/services/toolTips.js
 js/controllers/ui.js
@@ -55,7 +54,6 @@ js/controllers/library.js
 js/services/dragAndDropPlaylists.js
 js/services/videoSizer.js
 js/services/slider.js
-js/libs/lightbox-2.6.min.js
 js/libs/qtip.js
 js/services/toolTips.js
 js/controllers/ui.js
@@ -81,7 +79,6 @@ js/controllers/library.js
 js/services/dragAndDropPlaylists.js
 js/services/videoSizer.js
 js/services/slider.js
-js/libs/lightbox-2.6.min.js
 js/libs/qtip.js
 js/services/toolTips.js
 js/controllers/ui.js
@@ -96,7 +93,6 @@ js/services/dragAndDropPlaylists.js
 js/services/videoSizer.js
 js/services/getCookiesService.js
 js/services/slider.js
-js/libs/lightbox-2.6.min.js
 js/libs/qtip.js
 js/services/toolTips.js
 js/controllers/ui.js
