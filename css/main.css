@@ -4527,6 +4527,177 @@ html {
 #minimizeOverlay img {
   width: 83.3333333%;
 }
+#deleteAcctModal, #restoreAcctModal, #nameDeviceModal {
+  display: none;
+}
+.modal-container {
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10000;
+}
+.modal {
+  width: 83.3333333%;
+  margin-left: 8.33333335%;
+  margin-right: 8.33333335%;
+  position: relative;
+  background: #ebebeb;
+  border-radius: 2px;
+  margin-top: 13%;
+  padding: 1%;
+  text-align: center;
+}
+.modal h2 {
+  font-size: 2.4em;
+  margin-bottom: 9px;
+}
+.modal p {
+  font-size: 1.2em;
+}
+@media only screen and (min-width: 800px) {
+  .modal {
+    width: 25%;
+    margin-left: 37.5%;
+    margin-right: 37.5%;
+  }
+}
+.modalCloseIcon {
+  position: absolute;
+  bottom: 102%;
+  left: 102%;
+}
+#deleteAccountButton, #newAccountButton, #restoreAccountButton {
+  width: 66.6666666%;
+  margin-left: 16.6666667%;
+  margin-right: 16.6666667%;
+  height: 45px;
+  color: #ebebeb;
+  background: #cf2425;
+  border: none;
+}
+#restoreAccountButton {
+  background: #2f7c2f;
+}
+#restoreAcctModal .modal {
+  text-align: left;
+}
+#devicePrompt p {
+  text-align: left;
+  margin-top: 18px;
+  margin-bottom: 0;
+}
+#appLoading h3 {
+  color: #ebebeb;
+  margin-top: 20%;
+  text-align: center;
+}
+#closeAds {
+  position: relative;
+  width: 21px;
+  height: 21px;
+  top: 0;
+  left: 92%;
+  z-index: 1000;
+}
+#adsense {
+  position: relative;
+  
+  width: 100%;
+  
+  height: 61px;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 10000;
+  opacity: .75;
+  overflow-x: hidden;
+  display: none;
+}
+@media only screen and (min-width: 800px) {
+  #adsense {
+    position: fixed;
+    bottom: 72px;
+    left: 25%;
+    width: 75%;
+  }
+}
+#adsense1 {
+  width: 468px;
+  height: 60px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+#adsense2 {
+  width: 468px;
+  height: 60px;
+  position: absolute;
+  left: 468px;
+  bottom: 0;
+  display: none;
+}
+@media only screen and (min-width: 480px) {
+  #adsense2 {
+    display: inline-block;
+  }
+}
+#adsense3 {
+  width: 468px;
+  height: 60px;
+  position: absolute;
+  left: 468px;
+  bottom: 0;
+  display: none;
+}
+@media only screen and (min-width: 960px) {
+  #adsense3 {
+    display: inline-block;
+  }
+}
+.ytbanner {
+  width: 468px;
+  height: 60px;
+  float: left;
+  text-align: left;
+  left: 0;
+}
+.light-fonts {
+  color: #949494 !important;
+  
+}
+.light-border-bottom {
+  border-bottom: 1px solid #e2e2e2 !important;
+  
+}
+.light-border-right {
+  border-right: 1px solid #e2e2e2 !important;
+  
+}
+.light-border-left {
+  border-left: 1px solid #e2e2e2 !important;
+  
+}
+.light-placeholder::-webkit-input-placeholder {
+  
+  color: #e2e2e2 !important;
+}
+.light-placeholder:-moz-placeholder {
+  
+  color: #e2e2e2 !important;
+}
+.light-placeholder::-moz-placeholder {
+  
+  color: #e2e2e2 !important;
+}
+.light-placeholder:-ms-input-placeholder {
+  
+  color: #e2e2e2 !important;
+}
+.light-input-bg {
+  background: #e2e2e2 !important;
+  border: none !important;
+}
 .sidebarSlideRight {
   left: 0 !important;
   transition-duration: 0.7s;
@@ -4919,6 +5090,7 @@ section.app {
 @media only screen and (min-width: 800px) {
   .search input {
     height: 72px;
+    line-height: 72px;
   }
 }
 .search input[type="text"] {
@@ -5224,6 +5396,11 @@ section.app {
     font-size: .8em;
   }
 }
+.sortIcon {
+  width: 8px;
+  opacity: .1;
+  margin: 6px 0 0 3px;
+}
 .li-group {
   color: #494f4f;
   font-size: .8em;
@@ -5476,141 +5653,6 @@ ul.dropdown-main-menu li ul::-webkit-scrollbar {
 }
 #resetPasswordError {
   bottom: -18px;
-}
-#deleteAcctModal, #restoreAcctModal, #nameDeviceModal {
-  display: none;
-}
-.modal-container {
-  background: rgba(0, 0, 0, 0.5);
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 10000;
-}
-.modal {
-  width: 83.3333333%;
-  margin-left: 8.33333335%;
-  margin-right: 8.33333335%;
-  position: relative;
-  background: #ebebeb;
-  border-radius: 2px;
-  margin-top: 13%;
-  padding: 1%;
-  text-align: center;
-}
-.modal h2 {
-  font-size: 2.4em;
-  margin-bottom: 9px;
-}
-.modal p {
-  font-size: 1.2em;
-}
-@media only screen and (min-width: 800px) {
-  .modal {
-    width: 25%;
-    margin-left: 37.5%;
-    margin-right: 37.5%;
-  }
-}
-.modalCloseIcon {
-  position: absolute;
-  bottom: 102%;
-  left: 102%;
-}
-#deleteAccountButton, #newAccountButton, #restoreAccountButton {
-  width: 66.6666666%;
-  margin-left: 16.6666667%;
-  margin-right: 16.6666667%;
-  height: 45px;
-  color: #ebebeb;
-  background: #cf2425;
-  border: none;
-}
-#restoreAccountButton {
-  background: #2f7c2f;
-}
-#restoreAcctModal .modal {
-  text-align: left;
-}
-#devicePrompt p {
-  text-align: left;
-  margin-top: 18px;
-  margin-bottom: 0;
-}
-#appLoading h3 {
-  color: #ebebeb;
-  margin-top: 20%;
-  text-align: center;
-}
-#closeAds {
-  position: relative;
-  width: 21px;
-  height: 21px;
-  top: 0;
-  left: 92%;
-  z-index: 1000;
-}
-#adsense {
-  position: relative;
-  
-  width: 100%;
-  
-  height: 61px;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 10000;
-  opacity: .75;
-  overflow-x: hidden;
-  display: none;
-}
-@media only screen and (min-width: 800px) {
-  #adsense {
-    position: fixed;
-    bottom: 72px;
-    left: 25%;
-    width: 75%;
-  }
-}
-#adsense1 {
-  width: 468px;
-  height: 60px;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-}
-#adsense2 {
-  width: 468px;
-  height: 60px;
-  position: absolute;
-  left: 468px;
-  bottom: 0;
-  display: none;
-}
-@media only screen and (min-width: 480px) {
-  #adsense2 {
-    display: inline-block;
-  }
-}
-#adsense3 {
-  width: 468px;
-  height: 60px;
-  position: absolute;
-  left: 468px;
-  bottom: 0;
-  display: none;
-}
-@media only screen and (min-width: 960px) {
-  #adsense3 {
-    display: inline-block;
-  }
-}
-.ytbanner {
-  width: 468px;
-  height: 60px;
-  float: left;
-  text-align: left;
-  left: 0;
 }
 .footer {
   background: #0f1010;
@@ -5895,8 +5937,8 @@ ul.dropdown-main-menu li ul::-webkit-scrollbar {
   width: 16.6666667%;
   float: left;
   height: 100%;
-  padding: 0 4%;
   display: none;
+  padding: 0 2.5%;
 }
 .playing-share-ctrl svg, .playing-share-ctrl img {
   height: 18px;
@@ -5906,6 +5948,11 @@ ul.dropdown-main-menu li ul::-webkit-scrollbar {
 @media only screen and (min-width: 800px) {
   .playing-share-ctrl {
     display: inline-block;
+  }
+}
+@media only screen and (min-width: 1154px) {
+  .playing-share-ctrl {
+    padding: 0 4%;
   }
 }
 .playon-ctrl {
@@ -5959,42 +6006,6 @@ ul.dropdown-main-menu li ul::-webkit-scrollbar {
     display: none;
     margin-top: 27px;
   }
-}
-.light-fonts {
-  color: #949494 !important;
-  
-}
-.light-border-bottom {
-  border-bottom: 1px solid #e2e2e2 !important;
-  
-}
-.light-border-right {
-  border-right: 1px solid #e2e2e2 !important;
-  
-}
-.light-border-left {
-  border-left: 1px solid #e2e2e2 !important;
-  
-}
-.light-placeholder::-webkit-input-placeholder {
-  
-  color: #e2e2e2 !important;
-}
-.light-placeholder:-moz-placeholder {
-  
-  color: #e2e2e2 !important;
-}
-.light-placeholder::-moz-placeholder {
-  
-  color: #e2e2e2 !important;
-}
-.light-placeholder:-ms-input-placeholder {
-  
-  color: #e2e2e2 !important;
-}
-.light-input-bg {
-  background: #e2e2e2 !important;
-  border: none !important;
 }
 body:after {
   content: url(../images/close.png) url(../images/loading.gif) url(../images/prev.png) url(../images/next.png);
