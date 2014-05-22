@@ -3,6 +3,10 @@ css/main.css
 ----------------
 css/main.css
 
+css/main.min.css
+----------------
+css/main.min.css
+
 css/shame.css
 ----------------
 css/shame.css
