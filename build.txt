@@ -49,8 +49,8 @@ js/services/getCookiesService.js
 js/services/activeItem.js
 js/services/sortContent.js
 js/services/getUserDevices.js
-js/services/socketService.js
 js/services/determineDevice.js
+js/services/socketService.js
 js/controllers/init.js
 js/controllers/user.js
 js/services/toggleUi.js
@@ -74,8 +74,8 @@ js/services/getCookiesService.js
 js/services/activeItem.js
 js/services/sortContent.js
 js/services/getUserDevices.js
-js/services/socketService.js
 js/services/determineDevice.js
+js/services/socketService.js
 js/controllers/init.js
 js/controllers/user.js
 js/services/toggleUi.js
